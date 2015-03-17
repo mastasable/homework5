@@ -27,8 +27,7 @@ public class HashSetApp {
     }
 
     public static void main(String args[]) throws IOException {
-        int aKey;
-        Link aDataItem;
+        int aVal;
 
         HashSet hashSet = new HashSet();
 
@@ -38,18 +37,17 @@ public class HashSetApp {
             switch (choice){
                 case 'a':
                     System.out.print("Введите целое число: ");
-                    aKey = getInt();
-                    aDataItem = new Link(aKey);
-                    hashSet.add(aDataItem);
+                    aVal = getInt();
+                    hashSet.add(aVal);
                     break;
                 case 'c':
                     System.out.print("Введите значение для поиска: ");
-                    aKey = getInt();
-                    aDataItem = hashSet.contains(aKey);
-                    if(aDataItem != null){
-                        System.out.println("Найдено: " + aKey);
+                    aVal = getInt();
+                    boolean aIscons = hashSet.contains(aVal);
+                    if(aIscons){
+                        System.out.println("Найдено: " + aVal);
                     } else
-                        System.out.println("Не найдено: " + aKey);
+                        System.out.println("Не найдено: " + aVal);
                     break;
                 case 'd':
                     hashSet.display();
