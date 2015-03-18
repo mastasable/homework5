@@ -21,12 +21,13 @@ public class HashSet {
     public void add(int val){
         int key = val;
         int hashVal = hashFunc(key);
-        hashArray[hashVal].add(val);
+        if(!hashArray[hashVal].contains(val))
+            hashArray[hashVal].add(val);
     }
 
     public boolean contains(int key){
-        int hashval = hashFunc(key);
-        boolean isCon = hashArray[hashval].contains(key);
+        int hashVal = hashFunc(key);
+        boolean isCon = hashArray[hashVal].contains(key);
         return isCon;
     }
 

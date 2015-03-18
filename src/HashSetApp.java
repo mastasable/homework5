@@ -1,8 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Scanner;
+
 
 /**
  * Created by admin on 17.03.2015.
@@ -32,22 +31,13 @@ public class HashSetApp {
         HashSet hashSet = new HashSet();
 
         while (true){
-            System.out.print("Введите команду: a - добавление, c - поиск, d - показать сет");
+            System.out.print("Введите команду: a - добавление, d - показать сет");
             char choice = getChar();
             switch (choice){
                 case 'a':
                     System.out.print("Введите целое число: ");
                     aVal = getInt();
                     hashSet.add(aVal);
-                    break;
-                case 'c':
-                    System.out.print("Введите значение для поиска: ");
-                    aVal = getInt();
-                    boolean aIscons = hashSet.contains(aVal);
-                    if(aIscons){
-                        System.out.println("Найдено: " + aVal);
-                    } else
-                        System.out.println("Не найдено: " + aVal);
                     break;
                 case 'd':
                     hashSet.display();
